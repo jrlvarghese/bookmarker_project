@@ -1,4 +1,6 @@
 <?php
+    //start session
+    session_start();
     if(isset($_POST['siteName'])){
         //echo 'submitted';
         //check whether the session is set or not
@@ -66,7 +68,15 @@
 
             </div>
             <div class="col-md-5">
-
+                <?php if(isset($_SESSION['bookmarks'])): ?>
+                <ul class="list-group">
+                    <?php foreach($_SESSION['bookmarks'] as $siteName=>$url): ?>
+                        <li class="list-group-item">
+                            <a href="<?php echo $url; ?>"><?php echo $siteName; ?></a>
+                        </li> 
+                    <?php endforeach; ?>                   
+                </ul>
+                <?php endif; ?>
             </div>
         </div>
     </div>
