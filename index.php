@@ -12,6 +12,13 @@
             $_SESSION['bookmarks'] = Array($_POST['siteName']=>$_POST['url']);
         }
     }
+    // delete site name if delete is pressed
+    if(isset($_GET['action'])&&($_GET['action']=='delete')){
+        // delete the site from session variable
+        unset($_SESSION['bookmarks'][$_GET['siteName']]);
+        // redirect to the same page
+        header("Location:index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -73,6 +80,7 @@
                     <?php foreach($_SESSION['bookmarks'] as $siteName=>$url): ?>
                         <li class="list-group-item">
                             <a href="<?php echo $url; ?>"><?php echo $siteName; ?></a>
+                            <a style="color:white;" href="index.php?action=delete&siteName=<?php echo $siteName ?>">[X]</a>
                         </li> 
                     <?php endforeach; ?>                   
                 </ul>
