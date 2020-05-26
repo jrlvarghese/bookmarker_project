@@ -6,7 +6,7 @@
     </head>
     <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Expand at sm</a>
+        <a class="navbar-brand" href="#">Bookmarker</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse" id="navbarsExample03">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -36,5 +36,26 @@
             </form>
         </div>
     </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <form>
+                    <div class="form-group">
+                        <label>Website Name</label>
+                        <input type="text" class="form-control" name="siteName">
+                    </div>
+                    <div class="form-group">
+                        <label>Url</label>
+                        <input type="text" class="form-control" name="url">
+                    </div>
+                    <input type="submit" value="Submit" class="btn btn-light">
+                </form>
+
+            </div>
+            <div class="col-md-5">
+
+            </div>
+        </div>
+    </div>
     </body>
 </html>
