@@ -19,6 +19,13 @@
         // redirect to the same page
         header("Location:index.php");
     }
+    // delete all if pressed clear all
+    if(isset($_GET['action'])&&($_GET['action']=='clearall')){
+        session_unset();
+        session_destroy();
+        // redirect to the same page
+        header("Location:index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -85,6 +92,12 @@
                     <?php endforeach; ?>                   
                 </ul>
                 <?php endif; ?>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-md-5">
+                <a href="index.php?action=clearall" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Clear all</a>
             </div>
         </div>
     </div>
