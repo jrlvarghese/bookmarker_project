@@ -1,3 +1,16 @@
+<?php
+    if(isset($_POST['siteName'])){
+        //echo 'submitted';
+        //check whether the session is set or not
+        if(isset($_SESSION['bookmarks'])){
+            // if session is already set then add the site name with url to the session
+            $_SESSION['bookmarks'][$_POST['siteName']] = $_POST['url'];
+        }else{
+            // if session is not set initialise an array
+            $_SESSION['bookmarks'] = Array($_POST['siteName']=>$_POST['url']);
+        }
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,7 +52,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7">
-                <form>
+                <form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
                     <div class="form-group">
                         <label>Website Name</label>
                         <input type="text" class="form-control" name="siteName">
